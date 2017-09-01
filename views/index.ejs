@@ -1,20 +1,39 @@
 <% include ./partials/header %>
+<div class="ui main text container">
+  <div class="ui header header">RESTful Blog App</div>
+  <div class="ui top attached segment">
+    <div class="ui divided items">
+      <% blogs.forEach(function(blog){ %>
 
-<h1>Index page</h1>
+      <div class="item">
+       <div class="image">
+         <img src="<%= blog.image%>" alt="">
+       </div>
+       <div class="content">
+         <a class="header" href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+         <div class="meta">
+           <span><%= blog.created.toDateString() %></span>
+         </div>
+         <div class="description">
+           <!-- sanitized html content -->
+           <p><%- blog.body.substring(0,100) %>...</p>
+         </div>
+         <div class="extra">
+           <a class="ui animated fade button small" href="/blogs/<%= blog._id %>">
+               <div class="visible content">Read More</div>
+               <div class="hidden content">
+                <i class="arrow circle right icon"></i>
+               </div>
+           </a>
+         </div>
 
+       </div>
 
-<% blogs.forEach(function(blog){ %>
-
-<div>
-
- <h2><%= blog.title %></h2>
- <img src="<%= blog.image%>" alt="" width="20%">
- <span><%= blog.created %></span>
- <p><%= blog.body.substring(0,100) %>...</p>
- <a href="/blogs/<%= blog._id %>">Read More</a>
-
+      </div>
+     <% }) %>
+    </div>
+  </div>
 </div>
 
 
-<% }) %>
 <% include ./partials/footer %>
