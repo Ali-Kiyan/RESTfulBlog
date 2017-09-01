@@ -1,6 +1,31 @@
+
+*{
+  border-radius: 1px !important;
+  font-family: 'Ropa Sans', sans-serif;
+}
+.menu a {
+  font-family: 'News Cycle', sans-serif ;
+}
+.menu{
+  background-color: #40505f !important;
+}
+
 i.icon {
   font-size: 2em;
 }
 .container.main{
   margin-top: 5%;
+}
+.bgGrey{
+  background-color: #ebebeb !important;
+}
+.buttons{
+  margin-top: 2%;
+}
+.buttons a{
+  float: left;
+  background-color: #2980b9 !important;
+}
+.buttons button{
+  background-color: #e62323 !important;
 }
